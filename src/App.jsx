@@ -53,7 +53,7 @@ function App() {
       </p> <Contact key={1} /></div>]),
 
       a: () => setOutput([...output, 'This is a simple React terminal website.']),
-      
+
       cls: () => setOutput([]),
     };
 
@@ -96,12 +96,11 @@ function App() {
       <div className="w-screen  md:h-screen flex flex-col items-center justify-center  bg-[#011627] relative">
         <div style={shadowStyle} className="max-w-[50rem] pb-4">
           <div className="w-full h-12 flex gap-2 pl-3 pt-3 bg-[#011627]">
-            <a ><button className="text-[#64F105] hover:text-[#CD7638] text-xl">⊖</button></a>
-            <a ><button className="text-[#CD7638] hover:text-[#F5084F] text-xl">⊗</button></a>
+            <Link to={'/blank'} ><button className="text-[#64F105] hover:text-[#CD7638] text-xl">⊖</button></Link>
+            <Link to={'/close'} ><button className="text-[#CD7638] hover:text-[#F5084F] text-xl">⊗</button></Link>
           </div>
           <div className="pl-8 pr-8 md:pr-32 h-[30rem] rounded-xl overflow-y-auto scrollbar-hidden" >
             <Local />
-
             <div>
               {output.map((line, index) => (
                 <pre key={index}>{line}</pre>
