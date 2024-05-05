@@ -102,8 +102,8 @@ function App() {
           <div className="pl-8 pr-8 md:pr-32 h-[30rem] rounded-xl overflow-y-auto scrollbar-hidden" >
             <Local />
             <div>
-              {output.map((line, index) => (
-                <pre key={index}>{line}</pre>
+              {output.map((item, idx) => (
+                <pre  className=' font-medium tracking-custom ' key={idx}>{item}</pre>
               ))}
             </div>
 
