@@ -99,7 +99,7 @@ function App() {
             <Link to={'/blank'} ><button className="text-[#64F105] hover:text-[#CD7638] text-xl">⊖</button></Link>
             <Link to={'/close'} ><button className="text-[#CD7638] hover:text-[#F5084F] text-xl">⊗</button></Link>
           </div>
-          <div className="pl-8 pr-8 md:pr-32 h-[30rem] rounded-xl overflow-y-auto" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+          <div className="pl-8 pr-8 md:pr-32 h-[30rem] rounded-xl overflow-y-auto mx-3" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
             <Local />
             <div>
               {output.map((item, idx) => (
