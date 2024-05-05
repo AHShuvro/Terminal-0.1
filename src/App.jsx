@@ -94,12 +94,12 @@ function App() {
   return (
     <>
       <div className="w-screen h-screen flex flex-col items-center justify-center  bg-[#011627] relative">
-        <div style={shadowStyle} className="max-w-[50rem] pb-4">
+        <div style={shadowStyle} className="max-w-[50rem] pb-4  mx-4">
           <div className="w-full h-12 flex gap-2 pl-3 pt-3 bg-[#011627]">
             <Link to={'/blank'} ><button className="text-[#64F105] hover:text-[#CD7638] text-xl">⊖</button></Link>
             <Link to={'/close'} ><button className="text-[#CD7638] hover:text-[#F5084F] text-xl">⊗</button></Link>
           </div>
-          <div className="pl-2 md:pl-8 pr-6 md:pr-32 h-[30rem] rounded-xl overflow-y-auto mx-8" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+          <div className="pl-2 md:pl-8 pr-6 md:pr-32 h-[30rem] rounded-xl overflow-y-auto" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
             <Local />
             <div className='w-full'>
               {output.map((item, idx) => (
