@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Mono&display=swap');
+body {
+  font-family: 'Cascadia Mono', monospace;
+}
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
