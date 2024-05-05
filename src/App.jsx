@@ -99,9 +99,9 @@ function App() {
             <Link to={'/blank'} ><button className="text-[#64F105] hover:text-[#CD7638] text-xl">⊖</button></Link>
             <Link to={'/close'} ><button className="text-[#CD7638] hover:text-[#F5084F] text-xl">⊗</button></Link>
           </div>
-          <div className="pl-8 pr-8 md:pr-32 h-[30rem] rounded-xl overflow-y-auto mx-3" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+          <div className="pl-2 md:pl-8 pr-6 md:pr-32 h-[30rem] rounded-xl overflow-y-auto mx-8" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
             <Local />
-            <div>
+            <div className='w-full'>
               {output.map((item, idx) => (
                 <pre  className=' font-medium tracking-custom ' key={idx}>{item}</pre>
               ))}
