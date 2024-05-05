@@ -93,7 +93,7 @@ function App() {
 
   return (
     <>
-      <div className="w-screen  md:h-screen flex flex-col items-center justify-center  bg-[#011627] relative">
+      <div className="w-screen h-screen flex flex-col items-center justify-center  bg-[#011627] relative">
         <div style={shadowStyle} className="max-w-[50rem] pb-4">
           <div className="w-full h-12 flex gap-2 pl-3 pt-3 bg-[#011627]">
             <Link to={'/blank'} ><button className="text-[#64F105] hover:text-[#CD7638] text-xl">⊖</button></Link>
