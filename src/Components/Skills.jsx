@@ -1,7 +1,7 @@
 
 const Skills = () => {
     return (
-        <div className='text-wrap font-medium tracking-custom'>
+        <div className='text-wrap font-medium tracking-custom  py-2'>
             <p className="text-[#ECAE32]">I can assist you with</p>
 
             <p className="text-[#ECAE32]"><span className="text-[#E70347]">★</span> Wordpress, Elementor, Divi</p>

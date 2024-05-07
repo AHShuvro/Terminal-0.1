@@ -1,7 +1,7 @@
 
 const Contact = () => {
     return (
-        <div className='text-wrap font-medium tracking-custom'>
+        <div className='text-wrap font-medium tracking-custom py-2'>
             <p className='text-[#FCE26E] tracking-custom'>In case you need me, drop a message via <span className="text-[#00FFFF]">'evilprince2009@gmail.com'</span>. I assure you I'll get back to you as soon as I can.
                 Are you social? Below are both clickable <span className="text-[#00FFFF]">links</span> & <span className="text-[#00FFFF]">usable commands</span>.</p>
             <h3 className="text-[#64F105]"><span className="text-[#00FFFF]">⇒ </span><a href="https://www.linkedin.com/in/evilprince2009/" target="_blank">LinkedIn</a></h3>

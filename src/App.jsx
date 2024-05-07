@@ -73,9 +73,16 @@ function App() {
       ]);
     }
     else {
-      setOutput([...output, <div className='flex flex-col gap-2 font-medium tracking-custom' key={1} ><p className='text-[#FEB819]  block pt-2'>
-        <span className=' text-[#F5084F]'>✗</span> <span className=' text-[#F5084F]'>root</span>@evilprince2009 $ <span className='text-[#249BDA]'>{command}</span>
-      </p> <Error error={command} key={1} /></div>]);
+      setOutput([...output, <div className='flex flex-col gap-2 font-medium tracking-custom' key={1} >
+        <p className='text-[#FEB819]  block pt-2'>
+          <span className=' text-[#F5084F]'>✗</span> <span className=' text-[#F5084F]'>root</span>@evilprince2009 $ <span className='text-[#249BDA]'>{command}</span>
+        </p>
+        <div className='text-wrap font-medium tracking-custom  py-2'>
+          <p className="text-[#E70347]">Error thrown : InvalidCommandException!</p>
+          <p className="text-[#F4D880]">The term <span className=' text-[#F5084F]'>'{command}'</span> is not recognized as the name of a cmdlet, function, script file, or operable program.</p>
+          <p className="text-[#F4D880]">Type <span className="text-[#249BDA]">"help"</span> or <span className="text-[#249BDA]">"cls"</span> for assistance.</p>
+        </div>
+      </div>]);
     }
 
     setInput('');
@@ -103,7 +110,7 @@ function App() {
             <Local />
             <div className='w-full'>
               {output.map((item, idx) => (
-                <pre  className=' font-medium tracking-custom ' key={idx}>{item}</pre>
+                <pre className=' font-medium tracking-custom ' key={idx}>{item}</pre>
               ))}
             </div>
 
