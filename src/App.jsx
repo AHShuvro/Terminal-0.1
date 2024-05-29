@@ -138,7 +138,10 @@ function App() {
 
 
         </div>
-        <p className='text-[#FEC303] text-base font-medium tracking-custom text-center md:text-right px-10 py-4 w-screen md:absolute bottom-0'>Coded with <span className='text-[#F5084F]'>♥</span> by <a href="https://www.facebook.com/ahshuvro77777?_rdc=1&_rdr" target="_blank"><span className='text-[#00FFFF]'>@ahshuvro77777</span></a></p>
+      </div>
+      <div className='flex flex-col lg:flex-row justify-between items-center absolute bottom-0 right-0 left-0'>
+        <p className='text-[#FEC303] text-base font-medium tracking-custom text-center md:text-right px-10 py-1 sm:py-2 md:py-4 '>This design and concept is inspired <span className='text-[#F5084F]'>♥</span> by <a href="https://www.facebook.com/evilprince2009" target="_blank"><span className='text-[#00FFFF]'>Ibne Nahian</span></a></p>
+        <p className='text-[#FEC303] text-base font-medium tracking-custom text-center md:text-right px-10 py-2 md:py-4 '>Coded with <span className='text-[#F5084F]'>♥</span> by <a href="https://www.facebook.com/ahshuvro7777/" target="_blank"><span className='text-[#00FFFF]'>@ahshuvro77777</span></a></p>
       </div>
     </>
 
