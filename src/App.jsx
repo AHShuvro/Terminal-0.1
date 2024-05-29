@@ -4,8 +4,8 @@ import Help from './Components/Help';
 import About from './Components/About';
 import Skills from './Components/Skills';
 import Contact from './Components/Contact';
-import Error from './Components/Error';
 import { Link } from 'react-router-dom';
+import Projects from './Components/Projects';
 
 function App() {
   const [input, setInput] = useState('');
@@ -37,20 +37,24 @@ function App() {
     const command = input.trim().toLowerCase();
     const commands = {
       help: () => setOutput([...output, <div className='flex flex-col gap-2 font-medium tracking-custom' key={1} ><p className='text-[#FEB819] block mt-2'>
-        <span className=' text-[#64F105]'>✓</span> <span className=' text-[#F5084F]'>root</span>@evilprince2009 $ <span className='text-[#249BDA]'>{command}</span>
+        <span className=' text-[#64F105]'>✓</span> <span className=' text-[#F5084F]'>root</span>@ahshuvro77777 $ <span className='text-[#249BDA]'>{command}</span>
       </p> <Help key={1} /></div>]),
 
       about: () => setOutput([...output, <div className='flex flex-col gap-2 font-medium tracking-custom' key={1} ><p className='text-[#FEB819] block mt-2'>
-        <span className=' text-[#64F105]'>✓</span> <span className=' text-[#F5084F]'>root</span>@evilprince2009 $ <span className='text-[#249BDA]'>{command}</span>
+        <span className=' text-[#64F105]'>✓</span> <span className=' text-[#F5084F]'>root</span>@ahshuvro77777 $ <span className='text-[#249BDA]'>{command}</span>
       </p> <About key={1} /></div>]),
 
       skills: () => setOutput([...output, <div className='flex flex-col gap-2 font-medium tracking-custom' key={1} ><p className='text-[#FEB819] block mt-2'>
-        <span className=' text-[#64F105]'>✓</span> <span className=' text-[#F5084F]'>root</span>@evilprince2009 $ <span className='text-[#249BDA]'>{command}</span>
+        <span className=' text-[#64F105]'>✓</span> <span className=' text-[#F5084F]'>root</span>@ahshuvro77777 $ <span className='text-[#249BDA]'>{command}</span>
       </p> <Skills key={1} /></div>]),
 
       contact: () => setOutput([...output, <div className='flex flex-col gap-2 font-medium tracking-custom' key={1} ><p className='text-[#FEB819] block mt-2'>
-        <span className=' text-[#64F105]'>✓</span> <span className=' text-[#F5084F]'>root</span>@evilprince2009 $ <span className='text-[#249BDA]'>{command}</span>
+        <span className=' text-[#64F105]'>✓</span> <span className=' text-[#F5084F]'>root</span>@ahshuvro77777 $ <span className='text-[#249BDA]'>{command}</span>
       </p> <Contact key={1} /></div>]),
+
+      projects: () => setOutput([...output, <div className='flex flex-col gap-2 font-medium tracking-custom' key={1} ><p className='text-[#FEB819] block mt-2'>
+        <span className=' text-[#64F105]'>✓</span> <span className=' text-[#F5084F]'>root</span>@ahshuvro77777 $ <span className='text-[#249BDA]'>{command}</span>
+      </p> <Projects key={1} /></div>]),
 
       a: () => setOutput([...output, 'This is a simple React terminal website.']),
 
@@ -68,14 +72,14 @@ function App() {
     else if (command === '') {
       setOutput([...output,
       <p key={1} className='text-[#FEB819] font-medium tracking-custom block'>
-        <span className=' text-[#64F105]'>✓</span> <span className=' text-[#F5084F]'>root</span>@evilprince2009 $
+        <span className=' text-[#64F105]'>✓</span> <span className=' text-[#F5084F]'>root</span>@ahshuvro77777 $
       </p>
       ]);
     }
     else {
       setOutput([...output, <div className='flex flex-col gap-2 font-medium tracking-custom' key={1} >
         <p className='text-[#FEB819]  block pt-2'>
-          <span className=' text-[#F5084F]'>✗</span> <span className=' text-[#F5084F]'>root</span>@evilprince2009 $ <span className='text-[#249BDA]'>{command}</span>
+          <span className=' text-[#F5084F]'>✗</span> <span className=' text-[#F5084F]'>root</span>@ahshuvro77777 $ <span className='text-[#249BDA]'>{command}</span>
         </p>
         <div className='text-wrap font-medium tracking-custom  py-2'>
           <p className="text-[#E70347]">Error thrown : InvalidCommandException!</p>
@@ -116,7 +120,7 @@ function App() {
 
             <div className='flex gap-2 pt-2'>
               <p className='text-[#FEB819] font-medium tracking-custom block'>
-                <span className=' text-[#64F105]'>✓</span> <span className=' text-[#F5084F]'>root</span>@evilprince2009 $
+                <span className=' text-[#64F105]'>✓</span> <span className=' text-[#F5084F]'>root</span>@ahshuvro77777 $
               </p>
 
               <input
@@ -134,7 +138,7 @@ function App() {
 
 
         </div>
-        <p className='text-[#FEC303] text-base font-medium tracking-custom text-center md:text-right px-10 py-4 w-screen md:absolute bottom-0'>Coded with <span className='text-[#F5084F]'>♥</span> by <a href="https://www.facebook.com/evilprince2009/?_rdc=1&_rdr" target="_blank"><span className='text-[#00FFFF]'>@evilprince2009</span></a></p>
+        <p className='text-[#FEC303] text-base font-medium tracking-custom text-center md:text-right px-10 py-4 w-screen md:absolute bottom-0'>Coded with <span className='text-[#F5084F]'>♥</span> by <a href="https://www.facebook.com/ahshuvro77777?_rdc=1&_rdr" target="_blank"><span className='text-[#00FFFF]'>@ahshuvro77777</span></a></p>
       </div>
     </>
 
