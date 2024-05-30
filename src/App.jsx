@@ -133,7 +133,7 @@ function App() {
             <Local />
             <div className='w-full'>
               {output.map((item, idx) => (
-                <pre className='font-medium tracking-custom' key={idx}>{item}</pre>
+                <pre className='text-wrap font-medium tracking-custom' key={idx}>{item}</pre>
               ))}
             </div>
 
