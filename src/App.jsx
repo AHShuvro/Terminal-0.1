@@ -12,7 +12,7 @@ function App() {
   const [output, setOutput] = useState([]);
   const [commandHistory, setCommandHistory] = useState([]);
   const [historyIndex, setHistoryIndex] = useState(-1);
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
 
 
 
@@ -63,20 +63,12 @@ function App() {
 
       light: () => {
         setTheme('light');
-        const them = localStorage.getItem('theme') || ['light'];
-        if(them){
-          localStorage.setItem('theme', 'light')
-        }
-
+        localStorage.setItem('theme', 'light');
       },
 
       dark: () => {
         setTheme('dark');
-        const them = localStorage.getItem('theme') || ['dark'];
-        if(them){
-          localStorage.setItem('theme', 'dark')
-        }
-
+        localStorage.setItem('theme', 'dark');
       },
     };
 
