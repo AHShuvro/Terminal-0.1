@@ -1,4 +1,5 @@
 import { useState, useRef, useLayoutEffect } from 'react';
+import { TiSocialGithubCircular } from "react-icons/ti";
 
 import Local from './Components/Local';
 import Help from './Components/Help';
@@ -7,6 +8,7 @@ import Skills from './Components/Skills';
 import Contact from './Components/Contact';
 import { Link } from 'react-router-dom';
 import Projects from './Components/Projects';
+
 
 function App() {
   const [input, setInput] = useState('');
@@ -116,9 +118,12 @@ function App() {
     <>
       <div className={`${theme} w-screen h-screen flex flex-col items-center justify-center bg-[#FAFAFA] dark:bg-[#011627] relative`}>
         <div style={shadowStyle} className="max-w-[50rem] pb-4  mx-4">
-          <div className="w-full h-12 flex gap-2 pl-3 pt-3 bg-[#FFFFFF] dark:bg-[#011627]">
-            <Link to={'/blank'} ><button className="text-[#007BFF] dark:text-[#64F105] hover:text-[#CD7638] text-xl">⊖</button></Link>
-            <Link to={'/close'} ><button className="text-[#FF0000] dark:text-[#CD7638] hover:text-[#F5084F] text-xl">⊗</button></Link>
+          <div className="w-full h-12 flex justify-between px-3 pt-3 bg-[#FFFFFF] dark:bg-[#011627]">
+            <div className='flex gap-2'>
+              <Link className='flex items-center' to={'/blank'} ><button className="text-[#007BFF] dark:text-[#64F105] hover:text-[#CD7638] text-xl">⊖</button></Link>
+              <Link className='flex items-center' to={'/close'} ><button className="text-[#FF0000] dark:text-[#CD7638] hover:text-[#F5084F] text-xl">⊗</button></Link>
+            </div>
+            <a href="https://github.com/AHShuvro" target='blank' className='flex items-center'><TiSocialGithubCircular className="text-[#011627] dark:text-[#FFFFFF] dark:hover:text-[#007BFF] text-2xl" /></a>
           </div>
           <div className="pl-4 md:pl-8 pr-6 md:pr-32 h-[30rem] rounded-xl overflow-y-auto bg-[#FAFAFA] dark:bg-[#011627]" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
             <Local />
