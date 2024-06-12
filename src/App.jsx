@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useRef, useLayoutEffect } from 'react';
+
 import Local from './Components/Local';
 import Help from './Components/Help';
 import About from './Components/About';
@@ -13,8 +14,7 @@ function App() {
   const [commandHistory, setCommandHistory] = useState([]);
   const [historyIndex, setHistoryIndex] = useState(-1);
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
-
-
+  const terminalEndRef = useRef(null);
 
   const handleInput = (e) => {
     setInput(e.target.value);
@@ -39,25 +39,25 @@ function App() {
   const handleCommand = () => {
     const command = input.trim().toLowerCase();
     const commands = {
-      help: () => setOutput([...output, <div className='flex flex-col gap-2 font-medium tracking-custom' key={1} ><p className='text-[#000000] dark:text-[#FEB819] block mt-2'>
+      help: () => setOutput([...output, <div className='flex flex-col gap-2 font-medium tracking-custom' key={output.length} ><p className='text-[#000000] dark:text-[#FEB819] block mt-2'>
         <span className='text-[#007BFF] dark:text-[#64F105]'>✓</span> <span className='text-[#FF0000] dark:text-[#F5084F]'>root</span>@ahshuvro77777 $ <span className='text-[#0056b3] dark:text-[#249BDA]'>{command}</span>
-      </p> <Help key={1} /></div>]),
+      </p> <Help key={output.length} /></div>]),
 
-      about: () => setOutput([...output, <div className='flex flex-col gap-2 font-medium tracking-custom' key={1} ><p className='text-[#000000] dark:text-[#FEB819] block mt-2'>
+      about: () => setOutput([...output, <div className='flex flex-col gap-2 font-medium tracking-custom' key={output.length} ><p className='text-[#000000] dark:text-[#FEB819] block mt-2'>
         <span className='text-[#007BFF] dark:text-[#64F105]'>✓</span> <span className='text-[#FF0000] dark:text-[#F5084F]'>root</span>@ahshuvro77777 $ <span className='text-[#0056b3] dark:text-[#249BDA]'>{command}</span>
-      </p> <About key={1} /></div>]),
+      </p> <About key={output.length} /></div>]),
 
-      skills: () => setOutput([...output, <div className='flex flex-col gap-2 font-medium tracking-custom' key={1} ><p className='text-[#000000] dark:text-[#FEB819] block mt-2'>
+      skills: () => setOutput([...output, <div className='flex flex-col gap-2 font-medium tracking-custom' key={output.length} ><p className='text-[#000000] dark:text-[#FEB819] block mt-2'>
         <span className='text-[#007BFF] dark:text-[#64F105]'>✓</span> <span className='text-[#FF0000] dark:text-[#F5084F]'>root</span>@ahshuvro77777 $ <span className='text-[#0056b3] dark:text-[#249BDA]'>{command}</span>
-      </p> <Skills key={1} /></div>]),
+      </p> <Skills key={output.length} /></div>]),
 
-      contact: () => setOutput([...output, <div className='flex flex-col gap-2 font-medium tracking-custom' key={1} ><p className='text-[#000000] dark:text-[#FEB819] block mt-2'>
+      contact: () => setOutput([...output, <div className='flex flex-col gap-2 font-medium tracking-custom' key={output.length} ><p className='text-[#000000] dark:text-[#FEB819] block mt-2'>
         <span className='text-[#007BFF] dark:text-[#64F105]'>✓</span> <span className='text-[#FF0000] dark:text-[#F5084F]'>root</span>@ahshuvro77777 $ <span className='text-[#0056b3] dark:text-[#249BDA]'>{command}</span>
-      </p> <Contact key={1} /></div>]),
+      </p> <Contact key={output.length} /></div>]),
 
-      projects: () => setOutput([...output, <div className='flex flex-col gap-2 font-medium tracking-custom' key={1} ><p className='text-[#000000] dark:text-[#FEB819] block mt-2'>
+      projects: () => setOutput([...output, <div className='flex flex-col gap-2 font-medium tracking-custom' key={output.length} ><p className='text-[#000000] dark:text-[#FEB819] block mt-2'>
         <span className='text-[#007BFF] dark:text-[#64F105]'>✓</span> <span className='text-[#FF0000] dark:text-[#F5084F]'>root</span>@ahshuvro77777 $ <span className='text-[#0056b3] dark:text-[#249BDA]'>{command}</span>
-      </p> <Projects key={1} /></div>]),
+      </p> <Projects key={output.length} /></div>]),
 
       cls: () => setOutput([]),
 
@@ -82,13 +82,13 @@ function App() {
     }
     else if (command === '') {
       setOutput([...output,
-      <p key={1} className='text-[#000000] dark:text-[#FEB819] font-medium tracking-custom block'>
+      <p key={output.length} className='text-[#000000] dark:text-[#FEB819] font-medium tracking-custom block'>
         <span className='text-[#007BFF] dark:text-[#64F105]'>✓</span> <span className='text-[#FF0000] dark:text-[#F5084F]'>root</span>@ahshuvro77777 $
       </p>
       ]);
     }
     else {
-      setOutput([...output, <div className='flex flex-col gap-2 font-medium tracking-custom' key={1} >
+      setOutput([...output, <div className='flex flex-col gap-2 font-medium tracking-custom' key={output.length} >
         <p className='text-[#000000] dark:text-[#FEB819] block pt-2'>
           <span className='text-[#FF0000] dark:text-[#F5084F]'>✗</span> <span className='text-[#FF0000] dark:text-[#F5084F]'>root</span>@ahshuvro77777 $ <span className='text-[#0056b3] dark:text-[#249BDA]'>{command}</span>
         </p>
@@ -103,10 +103,9 @@ function App() {
     setInput('');
   };
 
-  useEffect(() => {
-    setInput('');
+  useLayoutEffect(() => {
+    terminalEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [output]);
-
 
   const shadowStyle = {
     borderRadius: '8px',
@@ -127,6 +126,7 @@ function App() {
               {output.map((item, idx) => (
                 <pre className='text-wrap font-medium tracking-custom' key={idx}>{item}</pre>
               ))}
+              <div ref={terminalEndRef} />
             </div>
 
             <div className='flex gap-2 pt-2'>
@@ -146,8 +146,6 @@ function App() {
             </div>
 
           </div>
-
-
         </div>
       </div>
       <div className='flex flex-col lg:flex-row justify-between items-center absolute bottom-0 right-0 left-0'>
@@ -159,3 +157,4 @@ function App() {
 }
 
 export default App;
+
