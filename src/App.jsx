@@ -153,7 +153,7 @@ function App() {
           </div>
         </div>
       </div>
-      <div className='flex flex-col lg:flex-row justify-between items-center absolute bottom-0 right-0 left-0'>
+      <div className='hidden md:flex flex-col lg:flex-row justify-between items-center absolute bottom-0 right-0 left-0'>
         <p className='text-[#6c757d] dark:text-[#FEC303] text-xs sm:text-base font-medium tracking-custom text-center md:text-right px-10 py-2 md:py-4'>This design and concept is inspired <span className='text-[#FF0000] dark:text-[#F5084F]'>♥</span> by <a href="https://www.facebook.com/evilprince2009" target="_blank"><span className='text-[#007bff] dark:text-[#00FFFF]'>Ibne Nahian</span></a></p>
         <p className='text-[#6c757d] dark:text-[#FEC303] text-xs sm:text-base font-medium tracking-custom text-center md:text-right px-10 py-2 md:py-4'>Coded with <span className='text-[#FF0000] dark:text-[#F5084F]'>♥</span> by <a href="https://www.facebook.com/ahshuvro7777/" target="_blank"><span className='text-[#007bff] dark:text-[#00FFFF]'>@ahshuvro77777</span></a></p>
       </div>
