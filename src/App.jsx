@@ -25,12 +25,14 @@ function App() {
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       handleCommand();
-    } else if (e.key === 'ArrowUp') {
+    } 
+    else if (e.key === 'ArrowUp') {
       if (historyIndex < commandHistory.length - 1) {
         setHistoryIndex(historyIndex + 1);
         setInput(commandHistory[historyIndex + 1]);
       }
-    } else if (e.key === 'ArrowDown') {
+    } 
+    else if (e.key === 'ArrowDown') {
       if (historyIndex >= 0) {
         setHistoryIndex(historyIndex - 1);
         setInput(commandHistory[historyIndex - 1] || '');
@@ -39,7 +41,14 @@ function App() {
   };
 
   const handleCommand = () => {
+    
     const command = input.trim().toLowerCase();
+
+    if (command) {
+      setCommandHistory([command, ...commandHistory]);
+      setHistoryIndex(-1);
+    }
+
     const commands = {
       help: () => setOutput([...output, <div className='flex flex-col gap-2 font-medium tracking-custom' key={output.length} ><p className='text-[#000000] dark:text-[#FEB819] block mt-2'>
         <span className='text-[#007BFF] dark:text-[#64F105]'>✓</span> <span className='text-[#FF0000] dark:text-[#F5084F]'>root</span>@ahshuvro77777 $ <span className='text-[#0056b3] dark:text-[#249BDA]'>{command}</span>
@@ -74,10 +83,6 @@ function App() {
       },
     };
 
-    if (command) {
-      setCommandHistory([command, ...commandHistory]);
-      setHistoryIndex(-1);
-    }
 
     if (command in commands) {
       commands[command]();
